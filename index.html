@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+    <link rel="icon" href="images/favicon.png">
+    <link rel="stylesheet" href="styles.css">
+    <title>Yuri's Webfolio</title>
+</head>
+
+<body>
+    <div class="nav-wrapper">
+        <ul class="nav gap-5">
+        <div class="glowing-dot"></div>
+        <li class="nav-item">
+            <a class="nav-button" style="font-size: 20px;" onclick="scrollToSection('home')">✩₊˚⋆☾⋆₊✧</span></a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-button" onclick="scrollToSection('projects')">Projects</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-button" onclick="scrollToSection('contact')">Contact</a>
+        </li>
+        </ul>
+    </div>  
+
+    <section id="home" class="section">
+        <div style="margin-bottom: 58px;">
+            <span>.</span>
+        </div>
+        <div class="planet-container">
+            <div class="planet">
+                <h1 class="title subtle-glow">PROFILE</h1>
+            </div> 
+        </div>
+
+        <div class="about-wrapper">
+            <div class="row">
+                <div class="col-md-4 person">
+                    <h5 class="personal-info subtle-glow" style="letter-spacing: 4px;"><strong>Personal Information</strong></h5>
+                    <p class="shimmer-text">
+                        <span>*</span><span> </span><span>✧</span><span>･</span><span>ﾟ</span><span>:</span><span> </span><span>*</span><span>✧</span><span>･</span><span>ﾟ</span><span>:</span><span> </span><span>*</span><span> </span><span>✧</span><span>･</span><span>ﾟ</span>
+                    </p>
+                    <p class="description">
+                    <p><span class="orange person-spacing">✩ Name:</span> <span class="subtle-glow" style="letter-spacing: 3px;">Yuri Lat</span></p>
+                    <p><span class="orange person-spacing">✩ Date of birth:</span> <span class="subtle-glow" style="letter-spacing: 3px;">Oct 22, 2004</span></p>
+                    <p><span class="orange person-spacing">✩ Email:</span> <span class="subtle-glow" style="letter-spacing: 3px;">yurilat3@gmail.com</span></p>
+                    <p><span class="orange person-spacing">✩ Phone:</span> <span class="subtle-glow" style="letter-spacing: 3px;">09686279192</span></p>
+                    <p><span class="orange person-spacing">✩ City:</span> <span class="subtle-glow" style="letter-spacing: 3px;">Batangas</span></p>    
+                    </p>
+                </div>
+                <div class="col-md-8 info">
+                    <strong><span class="person-spacing">Hello!</span></strong> I'm <span class="orange-yellow">Yuri Lat!</span> &nbsp;&nbsp;<span="subtle-glow"> ✧˚ · .</span><br><br>
+                    <p class="description">A third year college student in Computer Science at <span class="orange">De La Salle Lipa</span>...</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="section">
+        <div class="planet-container">
+            <div class="planet">
+                <h1 class="title subtle-glow">PROJECTS</h1>
+            </div> 
+        </div>
+
+        <div class="project-wrapper">
+            <div class="gallery" id="container-one">
+                <div class="row">
+                    <div class="col-md-3 prod" onclick="showPopup('popup1'), changeColor()">
+                    <h3><span class="subtle-glow">Dandy's Trinkets</span></h1><br>
+                    <img src="images/Dandy.png" class="image-format" alt="Dandy's Trinket Shop Image"><br><br>
+                    <p class="description">A <span class="orange">store-based program</span> that lets you buy products from a shop which also provide multiple functionalities.</p>
+                    <br><p class="expand view-more-animation">.・。・✭ click to view more ✫゜・。.</p>
+                    </div>
+                    <div class="col-md-3 prod" onclick="showPopup('popup2'), changeColor()">
+                    <h3><span class="subtle-glow">SMDF DTBS</span></h3><br>
+                    <img src="images/SMDF.png" class="image-format" alt="Database for Sta. Maria Dairy Farm Image"><br><br>
+                    <p class="description">A <span class="orange">customized database management system </span>and <span class="orange">application</span> designed to efficiently store and track all vital records of a dairy farm.</p>
+                    <p class="expand view-more-animation">.・。・✭ click to view more ✫゜・。.</p>
+                    </div>
+                    <div class="col-md-3 prod" onclick="showPopup('popup3'), changeColor()">
+                    <h3><span class="subtle-glow">EquiCity</span></h3><br>
+                    <img src="images/urban.jpeg" class="image-format" alt="Urban Planner Web Application Image"><br><br>
+                    <p class="description">A <span class="orange">web-based application</span> for urban planning based on traffic congestion.</p>
+                    <br><br><p class="expand view-more-animation">.・。・✭ click to view more ✫゜・。.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="overlay" onclick="hidePopup()"></div>
+
+        <div id="popup1" class="popup" onclick="hidePopup()">
+            <span class="close"></span>
+            <h2><span class="subtle-glow">Dandy's Trinkets</span></h2><br>
+            <img src="images/Dandy.png" class="image-format-popup" alt="Dandy's Trinket Shop Image"><br><br>
+            <p class="personal-info">Language:<span class="orange"> C++</span></p>
+            <p class="description">A <span class="orange">store-based program</span> that lets you buy products from a shop which also provide multiple functionalities featuring the abilities to:</p>
+            <ul style="text-align: left;">
+                <li>Add Items</li>
+                <li>Update Items</li>
+                <li>Remove Items</li>
+                <li>Display Items</li>
+                <li>Search Items</li>
+                <li>Sort Items</li>
+                <li>Display Items</li>
+            </ul>
+            <br><p class="expand view-more-animation">.・。・✭ click anywhere to close ✫゜・。.</p>
+        </div>
+
+        <div id="popup2" class="popup" onclick="hidePopup()">
+            <span class="close"></span>
+            <h2><span class="subtle-glow">SMDF DTBS</span></h2><br>
+            <img src="images/SMDF.png" class="image-format-popup" alt="Database for Sta. Maria Dairy Farm Image"><br><br>
+            <p class="personal-info">Language:<span class="orange"> Html | CSS | JavaScript  &nbsp;</span> Database:<span class="orange"> myPHPAdmin  &nbsp;</span> UI/UX Tool:<span class="orange"> Figma</span></p>
+            <p class="description">A <span class="orange">customized database management system</span> and <span class="orange">application</span> designed for dairy farms, featuring an all-in-one dashboard that efficiently tracks vital records such as revenue, expenses, profit, debt and loans, assets and equipment, budgeting, and taxes—while also integrating calendar-based notes, customized appointment schedules, and historical financial data for streamlined farm management.</p>
+            <br><p class="expand view-more-animation">.・。・✭ click anywhere to close ✫゜・。.</p>
+        </div>
+
+        <div id="popup3" class="popup" onclick="hidePopup()">
+            <span class="close"></span>
+            <h2><span class="subtle-glow">EquiCity</span></h2><br>
+            <img src="images/urban.jpeg" class="image-format-popup" alt="Urban Planner Web Application Image"><br><br>
+            <p class="personal-info">Type:<span class="orange"> Project</span></p>
+            <p class="description">This <span class="orange">web-based application</span> is a smart location intelligence tool designed to guide commercial development in Lipa City through data-driven insights. By integrating real-time traffic data, population density, facility distribution, and land availability, it helps users identify optimal sites for new commercial hubs like malls, schools, and public service centers. Its interactive dashboard features a layered map, smart location recommendations, and a Commercial Hub Gauge to assess potential traffic impact. With tools for generating detailed reports and submitting development proposals to local authorities, EquiCity supports strategic, balanced urban growth and congestion relief across the city.</p>
+            <br><p class="expand view-more-animation">.・。・✭ click anywhere to close ✫゜・。.</p>
+        </div>
+    </section>
+
+    <section id="contact" class="section">
+        <div class="planet-container">
+            <div class="planet">
+                <h1 class="title subtle-glow">CONTACT</h1>
+            </div> 
+        </div>
+
+        <div class="contact-wrapper">
+            <div class="row">
+                <div class="col-md-8 contact-form">
+                    <div class="mb-3">
+                        <form id="myForm">
+                            <div class="mb-3">
+                                <label for="exampleFormControlInput1" class="form-label">Email address</label>
+                                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com" required>
+                                <div class="invalid-feedback">Please provide a valid email address.</div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="exampleFormControlTextarea1" class="form-label">Message me</label>
+                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" required></textarea>
+                                <div class="invalid-feedback">Please enter a message.</div>
+                            </div>
+                            <br>
+                            <div class="text-end">
+                                <button type="submit" class="btn btn-primary">Submit</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-md-4 contact-info">
+                    <h3 class="contact-info-message">IDEAS ORBITING YOUR MIND LIKE <span class="subtle-glow"><strong>SATTELITES?</strong></span></h3>
+                    <p class="shimmer-text">
+                        <span>*</span><span> </span><span>✧</span><span>･</span><span>ﾟ</span><span>:</span><span> </span><span>*</span><span>✧</span><span>･</span><span>ﾟ</span><span>:</span><span> </span><span>*</span><span> </span><span>✧</span><span>･</span><span>ﾟ</span>
+                    </p>
+                    <h3 class="contact-info-message">Let’s pull them into a <span class="subtle-glow"><strong>PROJECT'S GRAVITY!</strong></span></h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+
+</div>
+</body>
+</html>

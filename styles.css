@@ -1,0 +1,531 @@
+        body {
+            background-image: url('images/background2.JPG');
+            background-size: cover;
+            background-attachment: fixed;
+        }
+
+        .nav-button {
+            font-weight: 400;
+            letter-spacing: 1px;
+            color: rgba(255, 255, 255, 0.9);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .nav-button:hover {
+            color: rgba(255, 255, 255, 1);
+        }
+
+        .nav-button.active {
+            color: rgba(255, 255, 255, 1);
+        }
+
+        .nav {
+            position: fixed;
+            top: 20px; /* Maintains your original top margin */
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(5px);
+            width: calc(100% - 20px); /* Accounts for margins */
+            max-width: 1180px; /* Matches your wrapper */
+            margin: 0 auto; /* Centers horizontally */
+            padding: 15px 40px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            border: 2px solid #b0c3cfb6;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            display: flex;
+            align-items: center;  
+        }
+
+        /* Add padding to the first content element */
+        .nav-wrapper {
+            padding-top: 100px; /* nav height + original margin + buffer */
+        }
+
+        .nav-wrapper,
+        .about-wrapper,
+        .project-wrapper,
+        .contact-wrapper {
+            padding: 10px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .nav:hover,
+        .person:hover,
+        .info:hover,
+        .gallery:hover,
+        .contact-info:hover,
+        .contact-form:hover {
+            transform: scale(1.02);
+            border-color: #b0c3cfb6;
+            box-shadow: 
+                0 0 20px rgba(255, 255, 255, 0.3),
+                0 0 40px rgba(255, 255, 255, 0.15),
+                0 8px 16px rgba(0, 0, 0, 0.4);
+        }
+
+        .prod:hover {
+            border-color: #b0c3cfb6;
+            box-shadow: 
+                0 0 20px rgba(255, 255, 255, 0.3),
+                0 0 40px rgba(255, 255, 255, 0.15),
+                0 8px 16px rgba(0, 0, 0, 0.4);
+        }
+
+        .nav-button:hover {
+            text-shadow: 
+                0 0 20px rgba(255, 255, 255, 1),
+                0 0 40px rgba(255, 255, 255, 0.8),
+                0 0 20px rgba(255, 255, 255, 1),
+                0 0 40px rgba(255, 255, 255, 0.8);
+        }
+
+        .glowing-dot {
+            position: absolute;
+            width: 9px;
+            height: 9px;
+            background: rgb(176, 195, 207);
+            border-radius: 50%;
+            box-shadow: 
+                0 0 10px rgb(176, 195, 207),
+                0 0 20px rgb(176, 195, 207),
+                0 0 30px rgb(176, 195, 207),
+                0 0 40px rgb(176, 195, 207);
+            animation: moveAroundBorder 4s linear infinite;
+        }
+
+        @keyframes moveAroundBorder {
+            0% {
+                /* Start at top-left corner */
+                top: -6px;
+                left: -6px;
+            }
+            45% {
+                /* Move to top-right corner */
+                top: -6px;
+                left: calc(100% - 6px);
+            }
+            50% {
+                /* Move to bottom-right corner */
+                top: calc(100% - 6px);
+                left: calc(100% - 6px);
+            }
+            95% {
+                /* Move to bottom-left corner */
+                top: calc(100% - 6px);
+                left: -6px;
+            }
+            100% {
+                /* Back to top-left corner */
+                top: -6px;
+                left: -6px;
+            }
+        }
+
+        /* Add a subtle pulse effect to the dot */
+        .glowing-dot::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(176, 195, 207, 0.3) 0%, transparent 70%);
+            border-radius: 50%;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+                opacity: 0.7;
+            }
+            50% {
+                transform: scale(1.5);
+                opacity: 0.3;
+            }
+        }
+
+        .title {
+            text-align: center;
+            letter-spacing: 5px;
+            font-family: 'Consolas', 'Courier New', monospace;
+            font-weight: 1000;
+            color: rgba(255, 255, 255, 0.9);
+            margin: 40px 0px;
+            text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+        }
+
+        .description {
+            font-family: 'Consolas', 'Courier New', monospace;
+            text-align: justify;
+        }
+
+        .row {
+            display: flex;
+        }
+
+        .personal-info {
+            text-align: center;
+            font-size: 20px;
+        }
+
+        .person-spacing {
+            letter-spacing: 3px;
+        }
+
+        .person {
+            font-weight: 400;
+            letter-spacing: 1px;
+            color: rgba(255, 255, 255, 0.9);
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(5px);
+            width: 335px;
+            margin: 12px 12px;
+            padding: 20px 20px 15px 20px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            border: 2px solid rgba(176, 195, 207, 0.712);
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .info {
+            font-weight: 400;
+            letter-spacing: 1px;
+            color: rgba(255, 255, 255, 0.9);
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(5px);
+            width: 823px;
+            margin: 10px 10px;
+            padding: 15px 20px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            border: 2px solid rgba(176, 195, 207, 0.712);
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .orange {
+            color: rgba(255, 118, 32, 0.913);
+        }
+
+        .gallery {
+            font-weight: 400;
+            letter-spacing: 1px;
+            color: rgba(255, 255, 255, 0.9);
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(5px); 
+            width: 100%;
+            margin: 10px 0px;
+            text-align: center;
+            padding: 15px 25px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            border: 2px solid rgba(176, 195, 207, 0.712);
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .prod {
+            font-weight: 400;
+            letter-spacing: 1px;
+            color: rgba(255, 255, 255, 0.9);
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(5px); 
+            width: 31.5%;
+            margin: 10px 10px;
+            text-align: center;
+            padding: 25px 20px 10px 20px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            border: 2px solid rgba(176, 195, 207, 0.712);
+            border-radius: 8px;
+        }
+
+        .image-format {
+            max-width: 80%;
+        }
+
+        .image-format-popup {
+            max-width: 40%;
+        }
+
+        .expand {
+            color: rgba(84, 84, 84, 0.9);
+        }
+
+        .orange-yellow {
+            animation: colorChange 2.5s infinite;
+        }
+
+        @keyframes colorChange {
+            0% { color: rgb(254, 233, 42); }
+            50%   { color: rgba(255, 118, 32, 0.913); }
+            100% { color: rgb(254, 254, 42); }
+        }
+
+        .view-more-animation {
+            font-size: 15px;
+            background: linear-gradient(270deg, red, orange, yellow, violet, red);
+            background-size: 800% 800%;
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: colorFlow 8s linear infinite;
+        }
+
+        @keyframes colorFlow {
+            0% {
+                background-position: 0% 50%;
+            }
+            100% {
+                background-position: 100% 50%;
+            }
+        }
+
+        .contact-form {
+            font-weight: 400;
+            letter-spacing: 1px;
+            color: rgba(255, 255, 255, 0.9);
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(5px);
+            width: 725px;
+            margin: 10px 10px;
+            padding: 15px 20px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            border: 2px solid rgba(176, 195, 207, 0.712);
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .contact-info {
+            font-weight: 400;
+            letter-spacing: 1px;
+            color: rgba(255, 255, 255, 0.9);
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(5px);
+            width: 435px;
+            margin: 12px 12px;
+            padding: 15px 20px;
+            font-family: 'Consolas', 'Courier New', monospace;
+            border: 2px solid rgba(176, 195, 207, 0.712);
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center; 
+            flex-direction: column;
+        }
+
+        .planet-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 150px; /* or more if needed */
+        }
+
+        .planet {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background:
+                radial-gradient(circle at 60% 40%, rgba(255, 140, 66, 1) 10%, transparent 25%),
+                radial-gradient(circle at 20% 70%, rgba(229, 81, 0, 0.9) 8%, transparent 20%),
+                radial-gradient(circle at 80% 20%, rgba(255, 107, 26, 0.95) 12%, transparent 28%),
+                radial-gradient(circle at 40% 80%, rgba(255, 140, 66, 0.8) 6%, transparent 15%),
+                radial-gradient(circle at 75% 75%, rgba(229, 81, 0, 1) 9%, transparent 22%),
+                radial-gradient(circle at 15% 30%, rgba(255, 107, 26, 0.85) 7%, transparent 18%),
+                radial-gradient(circle at 90% 60%, rgba(200, 60, 0, 0.7) 5%, transparent 12%),
+                radial-gradient(circle at 30% 10%, rgba(255, 160, 80, 0.8) 8%, transparent 20%),
+                radial-gradient(circle at 10% 90%, rgba(180, 50, 0, 0.9) 6%, transparent 16%),;
+
+            box-shadow: 
+                /* Outer glow/offset shadow */
+                0 0 80px rgba(255, 107, 26, 0.6),
+                0 0 120px rgba(255, 140, 66, 0.3),
+                0 20px 40px rgba(0, 0, 0, 0.6),
+                /* Inner shadow for depth */
+                inset -30px -30px 60px rgba(0, 0, 0, 0.2),
+                inset 20px 20px 60px rgba(255, 140, 66, 0.4),
+                inset 10px 10px 30px rgba(255, 200, 100, 0.3);
+        }
+
+        .contact-info-message {
+            font-family: 'Consolas', 'Courier New', monospace;
+            text-align: center;
+            padding: 10px;
+        }
+
+        .shimmer-text {
+            font-size: 25px;
+            font-weight: bold;
+            text-align: center;
+            letter-spacing: 0.3em;
+        }
+
+        .shimmer-text span {
+            display: inline-block;
+            background: linear-gradient(
+                45deg,
+                #ff4500,
+                #ff6b00,
+                #ff8c00,
+                #ffa500,
+                #ffb347,
+                #ffd700,
+                #ffff00
+            );
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            color: transparent;
+            filter: brightness(0.7) saturate(0.8);
+        }
+
+        .shimmer-text span:nth-child(1) { animation: blink-shimmer 2.3s ease-in-out infinite; }
+        .shimmer-text span:nth-child(2) { animation: blink-shimmer 1.8s ease-in-out infinite 0.2s; }
+        .shimmer-text span:nth-child(3) { animation: blink-shimmer 2.1s ease-in-out infinite 0.5s; }
+        .shimmer-text span:nth-child(4) { animation: blink-shimmer 1.9s ease-in-out infinite 0.8s; }
+        .shimmer-text span:nth-child(5) { animation: blink-shimmer 2.4s ease-in-out infinite 1.1s; }
+        .shimmer-text span:nth-child(6) { animation: blink-shimmer 2.0s ease-in-out infinite 0.3s; }
+        .shimmer-text span:nth-child(7) { animation: blink-shimmer 1.7s ease-in-out infinite 0.7s; }
+        .shimmer-text span:nth-child(8) { animation: blink-shimmer 2.2s ease-in-out infinite 1.3s; }
+        .shimmer-text span:nth-child(9) { animation: blink-shimmer 1.6s ease-in-out infinite 0.4s; }
+        .shimmer-text span:nth-child(10) { animation: blink-shimmer 2.5s ease-in-out infinite 0.9s; }
+        .shimmer-text span:nth-child(11) { animation: blink-shimmer 1.8s ease-in-out infinite 1.2s; }
+        .shimmer-text span:nth-child(12) { animation: blink-shimmer 2.3s ease-in-out infinite 0.6s; }
+        .shimmer-text span:nth-child(13) { animation: blink-shimmer 2.0s ease-in-out infinite 1.0s; }
+        .shimmer-text span:nth-child(14) { animation: blink-shimmer 1.9s ease-in-out infinite 0.1s; }
+        .shimmer-text span:nth-child(15) { animation: blink-shimmer 2.1s ease-in-out infinite 1.4s; }
+        .shimmer-text span:nth-child(16) { animation: blink-shimmer 1.7s ease-in-out infinite 0.8s; }
+        .shimmer-text span:nth-child(17) { animation: blink-shimmer 2.4s ease-in-out infinite 0.2s; }
+        .shimmer-text span:nth-child(18) { animation: blink-shimmer 1.8s ease-in-out infinite 1.1s; }
+        .shimmer-text span:nth-child(19) { animation: blink-shimmer 2.2s ease-in-out infinite 0.5s; }
+
+        @keyframes blink-shimmer {
+            0%, 70% {
+                filter: brightness(0.7) saturate(0.8);
+                text-shadow: 0 0 5px rgba(255, 165, 0, 0.2);
+            }
+            85% {
+                filter: brightness(1.8) saturate(1.5);
+                text-shadow: 0 0 15px rgba(255, 165, 0, 0.8);
+            }
+            100% {
+                filter: brightness(0.7) saturate(0.8);
+                text-shadow: 0 0 5px rgba(255, 165, 0, 0.2);
+            }
+        }
+
+        .subtle-glow {
+            color: #ffffff;
+            text-align: center;
+            animation: subtle-white-glow 3s ease-in-out infinite;
+        }
+
+        @keyframes subtle-white-glow {
+            0%, 100% {
+                text-shadow: 
+                    0 0 3px rgba(255, 255, 255, 0.2),
+                    0 0 6px rgba(255, 255, 255, 0.1);
+            }
+            50% {
+                text-shadow: 
+                    0 0 6px rgba(255, 255, 255, 0.4),
+                    0 0 12px rgba(255, 255, 255, 0.2),
+                    0 0 18px rgba(255, 255, 255, 0.1);
+            }
+        }
+
+        .intense-glow {
+            color: #ffffff;
+            text-align: center;
+            animation: intense-white-glow 3s ease-in-out infinite;
+        }
+
+        @keyframes intense-white-glow {
+            0%, 100% {
+                text-shadow: 
+                    0 0 12px rgba(255, 255, 255, 0.2),
+                    0 0 18px rgba(255, 255, 255, 0.1),
+                    0 0 12px rgba(255, 255, 255, 0.2),
+                    0 0 18px rgba(255, 255, 255, 0.1),
+                    0 0 12px rgba(255, 255, 255, 0.2),
+                    0 0 18px rgba(255, 255, 255, 0.1),
+                    0 0 12px rgba(255, 255, 255, 0.2),
+                    0 0 18px rgba(255, 255, 255, 0.1);
+            }
+            50% {
+                text-shadow: 
+                    0 0 6px rgba(255, 255, 255, 0.4),
+                    0 0 12px rgba(255, 255, 255, 0.2),
+                    0 0 18px rgba(255, 255, 255, 0.1),
+                    0 0 6px rgba(255, 255, 255, 0.4),
+                    0 0 12px rgba(255, 255, 255, 0.2),
+                    0 0 18px rgba(255, 255, 255, 0.1);
+            }
+        }
+
+        .popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0);
+            z-index: 1000;
+            cursor: pointer;
+
+            font-weight: 400;
+            letter-spacing: 1px;
+            color: rgba(255, 255, 255, 0.9);
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(5px); 
+            width: 40%;
+            margin: 10px 10px;
+            text-align: center;
+            padding: 25px 20px 10px 20px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            border: 2px solid rgba(176, 195, 207, 0.712);
+            border-radius: 8px;
+            transition: transform 0.1s ease;
+        }
+
+        .popup.show {
+            transform: translate(-50%, -50%) scale(1);
+        }
+        
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.0);
+            z-index: 999;
+            transition: background 0.1s ease;
+        }
+        
+        .close {
+            float: right;
+            font-size: 20px;
+        }
+
